@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="data"
+                type="com.yakson.vngrs.githubtutorial.model.Item" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_12dp">
+
+            <ImageView
+                    android:id="@+id/userAvatarImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12dp"
+                    android:layout_marginTop="@dimen/margin_12dp"
+                    android:src="@drawable/ic_folder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+            <TextView
+                    android:id="@+id/repoNameTextView"
+                    style="@style/DarkBlueBoldTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_24dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/userAvatarImageView"
+                    app:layout_constraintStart_toEndOf="@+id/userAvatarImageView"
+                    app:layout_constraintTop_toTopOf="@+id/userAvatarImageView"
+                    tools:text="Android" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@drawable/view_shadow" />
+
+    </LinearLayout>
+
+</layout>

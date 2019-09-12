@@ -1,0 +1,25 @@
+<resources>
+
+
+    <string name="app_name">Github Tutorial</string>
+    <string name="api_exception_technical_error">Teknik Hata</string>
+    <string name="network_error">Lütfen Internet bağlantınızı kontrol ediniz.</string>
+    <string name="api_exception_unknown">Bilinmeyen bir hata oluştu</string>
+    <string name="result_not_found">Sonuç Bulunamadı</string>
+    <string name="search_text">Search</string>
+
+
+    <!--  RepositoryDetailActivity-->
+
+    <string name="fork_count_text">Fork Count</string>
+    <string name="language_text">Language</string>
+    <string name="default_branch_text">Default Branch</string>
+
+
+    <!--  RepositoryDetailActivity-->
+
+    <string name="followers_text">Followers</string>
+    <string name="following_text">Following</string>
+    <string name="public_repos_text">Public Repos</string>
+
+</resources>

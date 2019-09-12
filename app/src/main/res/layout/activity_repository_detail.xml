@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/userAvatarImageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:onClick="openUserDetailOnClickAction"
+                tools:ignore="ContentDescription" />
+
+        <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/repoNameTextView"
+                    style="@style/DarkBlueBoldTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    tools:text="Android" />
+
+            <TextView
+                    android:id="@+id/userNameTextView"
+                    style="@style/DarkBlueRegularTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    tools:text="JakeWharton" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/padding_8dp"
+                android:paddingBottom="@dimen/padding_12dp">
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/defaultBranchTextView"
+                        style="@style/GrayBoldTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_4dp"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        tools:text="1234" />
+
+                <TextView
+                        style="@style/DarkBlueRegularTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_branch_text"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                <TextView
+                        android:id="@+id/languageTextView"
+                        style="@style/GrayBoldTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_4dp"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        tools:text="530" />
+
+                <TextView
+                        style="@style/DarkBlueRegularTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/language_text"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/forkCountTextView"
+                        style="@style/GrayBoldTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_4dp"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        tools:text="300B" />
+
+                <TextView
+                        style="@style/DarkBlueRegularTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fork_count_text"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@drawable/view_shadow" />
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    style="@style/DarkBlueRegularTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>
