@@ -3,11 +3,13 @@ package com.yakson.vngrs.githubtutorial.ui.userdetail
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blankj.utilcode.util.LogUtils
 import com.yakson.vngrs.githubtutorial.R
 import com.yakson.vngrs.githubtutorial.adapters.UserDetailOtherRepoRecyclerAdapter
 import com.yakson.vngrs.githubtutorial.databinding.ActivityUserDetailBinding
 import com.yakson.vngrs.githubtutorial.model.Item
 import com.yakson.vngrs.githubtutorial.model.Owner
+import com.yakson.vngrs.githubtutorial.network.core.ApiException
 import com.yakson.vngrs.githubtutorial.ui.BaseActivity
 import com.yakson.vngrs.githubtutorial.utils.NetworkState
 import com.yakson.vngrs.githubtutorial.utils.REPOS
@@ -21,10 +23,8 @@ class UserDetailActivity : BaseActivity<UserDetailViewModel, ActivityUserDetailB
 
     private var userName: String? = null
     private var ownerUserDetail: Owner? = null
-    private lateinit var userDetailOtherRepoRecyclerAdapter: UserDetailOtherRepoRecyclerAdapter
-
     private var userDetailOtherRepoItem: ArrayList<Item?> = arrayListOf()
-
+    private lateinit var userDetailOtherRepoRecyclerAdapter: UserDetailOtherRepoRecyclerAdapter
 
     override fun getViewModelClass(): KClass<UserDetailViewModel> {
         return UserDetailViewModel::class
@@ -38,7 +38,6 @@ class UserDetailActivity : BaseActivity<UserDetailViewModel, ActivityUserDetailB
         initObservers()
         initializeAdapters()
         getIntentData()
-
     }
 
     /**
@@ -68,6 +67,14 @@ class UserDetailActivity : BaseActivity<UserDetailViewModel, ActivityUserDetailB
         })
 
         getViewModel().getError()?.observe(this, Observer {
+            when (it.status) {
+                ApiException.ExceptionStatus.API_ERROR -> {
+                    LogUtils.d("api error")
+                }
+                ApiException.ExceptionStatus.GENERAL_ERROR -> {
+                    LogUtils.d("general error")
+                }
+            }
         })
 
         getViewModel().getUserDetail().observe(this, Observer {

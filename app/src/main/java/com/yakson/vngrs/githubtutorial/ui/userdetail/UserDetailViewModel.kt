@@ -40,9 +40,7 @@ class UserDetailViewModel @Inject constructor(
             return
         }
         setNetworkStatus(NetworkState.LOADING)
-
-        val disposable =
-            userDetailUseCase.execute(object : DisposableSingleObserver<Owner>() {
+        val disposable = userDetailUseCase.execute(object : DisposableSingleObserver<Owner>() {
                 override fun onSuccess(t: Owner) {
                     userDetail.value = t
                 }
@@ -50,7 +48,6 @@ class UserDetailViewModel @Inject constructor(
                     setNetworkStatus(NetworkState.FAILED)
                 }
             }, url)
-
         compositeDisposable.add(disposable)
     }
 

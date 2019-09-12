@@ -10,14 +10,14 @@
 
 
     <!--  RepositoryDetailActivity-->
-
+    <string name="repository_detail_toolbar_text">Repository Detail</string>
     <string name="fork_count_text">Fork Count</string>
     <string name="language_text">Language</string>
     <string name="default_branch_text">Default Branch</string>
 
 
-    <!--  RepositoryDetailActivity-->
-
+    <!--  UserDetailActivity-->
+    <string name="user_detail_toolbar_text">User Detail</string>
     <string name="followers_text">Followers</string>
     <string name="following_text">Following</string>
     <string name="public_repos_text">Public Repos</string>

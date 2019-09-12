@@ -20,7 +20,6 @@ class RepositoryDetailActivity :
 
     private var repositoryDetailData: Item? = null
 
-
     override fun getViewModelClass(): KClass<RepositoryDetailViewModel> {
         return RepositoryDetailViewModel::class
     }
@@ -59,12 +58,9 @@ class RepositoryDetailActivity :
     fun openUserDetailOnClickAction(view: View?) {
         when (view?.id) {
             R.id.userAvatarImageView -> {
-
                 val intent = Intent(this, UserDetailActivity::class.java)
                 intent.putExtra(USER_NAME, repositoryDetailData?.owner?.login)
                 startActivity(intent)
-//                startActivityModal(intentFor<UserDetailActivity>())
-//                finishAffinity()
             }
         }
     }

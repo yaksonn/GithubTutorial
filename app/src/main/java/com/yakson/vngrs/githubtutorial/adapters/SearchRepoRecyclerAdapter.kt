@@ -10,7 +10,10 @@ import com.yakson.vngrs.githubtutorial.databinding.RowRepoRecyclerBinding
 import com.yakson.vngrs.githubtutorial.model.Item
 import com.yakson.vngrs.githubtutorial.utils.extension.setCircleImage
 
-class SearchRepoRecyclerAdapter(private val clickListener: (Item) -> Unit) :
+class SearchRepoRecyclerAdapter(
+    private val itemClickListener: (Item?) -> Unit,
+    private val clickListener: (Item) -> Unit
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var data: ArrayList<Item?> = arrayListOf()
@@ -68,6 +71,10 @@ class SearchRepoRecyclerAdapter(private val clickListener: (Item) -> Unit) :
 
             binding.linearLayout.setOnClickListener {
                 clickListener(data)
+            }
+
+            binding.userAvatarImageView.setOnClickListener {
+                itemClickListener(data)
             }
         }
     }

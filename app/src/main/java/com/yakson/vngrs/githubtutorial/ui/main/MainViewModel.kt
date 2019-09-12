@@ -46,7 +46,6 @@ class MainViewModel @Inject constructor(
                 setNetworkStatus(NetworkState.LOADED)
                 repoDataResponse.value = t.items
             }
-
             override fun onError(e: Throwable) {
                 setNetworkStatus(NetworkState.FAILED)
                 if (e is ApiException) {

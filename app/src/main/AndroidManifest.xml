@@ -25,10 +25,12 @@
 
         <activity
                 android:name=".ui.repositorydetail.RepositoryDetailActivity"
-                android:screenOrientation="portrait" />
+                android:screenOrientation="portrait"
+                android:theme="@style/NoActionBarTheme" />
         <activity
                 android:name=".ui.userdetail.UserDetailActivity"
-                android:screenOrientation="portrait" />
+                android:screenOrientation="portrait"
+                android:theme="@style/NoActionBarTheme" />
         <activity
                 android:name=".ui.main.MainActivity"
                 android:screenOrientation="portrait" />

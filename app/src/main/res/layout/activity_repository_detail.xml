@@ -8,6 +8,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+        <com.yakson.vngrs.githubtutorial.utils.customview.CustomToolbar
+                android:id="@+id/repositoryDetailToolbart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showBackIcon="true"
+                app:showCenterText="@string/repository_detail_toolbar_text" />
+
         <ImageView
                 android:id="@+id/userAvatarImageView"
                 android:layout_width="70dp"

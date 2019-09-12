@@ -18,10 +18,8 @@ import com.yakson.vngrs.githubtutorial.model.Item
 import com.yakson.vngrs.githubtutorial.network.core.ApiException
 import com.yakson.vngrs.githubtutorial.ui.BaseActivity
 import com.yakson.vngrs.githubtutorial.ui.repositorydetail.RepositoryDetailActivity
-import com.yakson.vngrs.githubtutorial.utils.EndlessRecyclerViewScrollListener
-import com.yakson.vngrs.githubtutorial.utils.NetworkState
-import com.yakson.vngrs.githubtutorial.utils.PER_PAGE
-import com.yakson.vngrs.githubtutorial.utils.REPO_DETAIL_DATA
+import com.yakson.vngrs.githubtutorial.ui.userdetail.UserDetailActivity
+import com.yakson.vngrs.githubtutorial.utils.*
 import com.yakson.vngrs.githubtutorial.utils.extension.setGone
 import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_main.*
@@ -78,7 +76,6 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
         getViewModel().getRepoData().observe(this, Observer { result ->
             result?.let { repoSearchItem ->
-
                 searchRepoRecyclerAdapter.setData(repoSearchItem as ArrayList<Item?>)
             }
         })
@@ -111,13 +108,21 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
                 }
                 return false
             }
+
             override fun onQueryTextSubmit(query: String) = false
         })
         return super.onCreateOptionsMenu(menu)
     }
 
     private fun setStandingUnderOverRecyclerView() {
-        searchRepoRecyclerAdapter = SearchRepoRecyclerAdapter({ item -> onEventClicked(item)})
+        searchRepoRecyclerAdapter = SearchRepoRecyclerAdapter(
+            { item ->
+                item?.let { onItemClicked(it) }
+            },
+            { item ->
+                onEventClicked(item)
+            })
+
         val manager = LinearLayoutManager(this@MainActivity)
         searchRecyclerView.apply {
             adapter = searchRepoRecyclerAdapter
@@ -142,6 +147,14 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         Paper.book().write(REPO_DETAIL_DATA, data)
         // Send data to other activity
         val intent = Intent(this, RepositoryDetailActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun onItemClicked(
+        data: Item
+    ) {
+        val intent = Intent(this, UserDetailActivity::class.java)
+        intent.putExtra(USER_NAME, data.owner?.login)
         startActivity(intent)
     }
 }
