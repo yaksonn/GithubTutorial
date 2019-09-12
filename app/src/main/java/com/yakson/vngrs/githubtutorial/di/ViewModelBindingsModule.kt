@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.yakson.vngrs.githubtutorial.di.scope.ViewModelKey
 import com.yakson.vngrs.githubtutorial.ui.main.MainViewModel
 import com.yakson.vngrs.githubtutorial.ui.repositorydetail.RepositoryDetailViewModel
+import com.yakson.vngrs.githubtutorial.ui.splash.SplashViewModel
 import com.yakson.vngrs.githubtutorial.ui.userdetail.UserDetailViewModel
 import com.yakson.vngrs.githubtutorial.utils.ViewModelFactory
 import dagger.Binds
@@ -26,6 +27,11 @@ abstract class ViewModelBindingsModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     internal abstract fun provideMainViewModel(mainViewModel: MainViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SplashViewModel::class)
+    internal abstract fun provideSplashViewModel(splashViewModel: SplashViewModel): ViewModel
 
     @Binds
     @IntoMap

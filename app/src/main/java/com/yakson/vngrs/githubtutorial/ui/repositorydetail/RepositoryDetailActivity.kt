@@ -11,10 +11,8 @@ import com.yakson.vngrs.githubtutorial.ui.userdetail.UserDetailActivity
 import com.yakson.vngrs.githubtutorial.utils.REPO_DETAIL_DATA
 import com.yakson.vngrs.githubtutorial.utils.USER_NAME
 import com.yakson.vngrs.githubtutorial.utils.extension.setCircleImage
-import com.yakson.vngrs.githubtutorial.utils.extension.startActivityModal
 import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_repository_detail.*
-import org.jetbrains.anko.intentFor
 import kotlin.reflect.KClass
 
 class RepositoryDetailActivity :
